@@ -1,21 +1,29 @@
-
+let parrafo = document.getElementById("parrafoPrincipal");
 
 // Crear el botón
-const nuevoBoton = document.createElement("button");
-nuevoBoton.id = "botonToggleParrafo";
-nuevoBoton.textContent = "Mostrar/Ocultar Párrafo";
+let btnDisplay = document.createElement("button");
+btnDisplay.id = "btnToggleParrafoDisplay";
+btnDisplay.textContent = "Mostrar/Ocultar Acordeón";
+btnDisplay.onclick = (ev) => parrafo.style.display = parrafo.style.display === "none" ? "block" : "none";
+
+let btnVisiblity = document.createElement("button");
+btnVisiblity.id = "btnToggleVisibilty";
+btnVisiblity.textContent = "Mostrar/Ocultar Párrafo";
+btnVisiblity.onclick = (ev) => parrafo.style.visibility = parrafo.style.visibility === "hidden" ? "visible" : "hidden";
 
 // Lo insertamos en seccion botones
-const seccionBotones = document.getElementById("seccionBotones");
-seccionBotones.appendChild(nuevoBoton);
+let seccionBotones = document.getElementById("seccionBotones");
+seccionBotones.appendChild(btnDisplay);
+seccionBotones.appendChild(btnVisiblity);
 
 // Agregar el evento al boton
-const parrafo = document.getElementById("parrafoPrincipal");
+// parrafo.style.display = "none";
 
-nuevoBoton.addEventListener("click", function () {
-    if (parrafo.style.display === "none") {
-      parrafo.style.display = "block";
-    } else {
-      parrafo.style.display = "none";
-    }
-  });
+// nuevoBoton.addEventListener("click", function () {
+//     if (parrafo.style.display === "none") {
+//       parrafo.style.display = "block";
+//     } else {
+//       parrafo.style.display = "none";
+//     }
+//   });
+
