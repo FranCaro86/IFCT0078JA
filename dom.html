@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -17,6 +16,24 @@
       border: 1px solid red;
       padding: 5px;
     }
+
+    .exito {
+      color: green;
+      border: 1px solid green;
+      padding: 5px;
+    }
+
+    .estiloTabla {
+      width: 100%;
+      border: 2px solid black;
+      background-color: rgb(201, 196, 196);
+
+    }
+
+    .estiloCelda {
+      height: 50px;
+
+    }
   </style>
 </head>
 
@@ -25,7 +42,6 @@
     <h1>Manipulando el DOM</h1>
   </header>
 
-
   <main>
     <section id="seccionParrafos">
       <h2>La sección de los párrafos</h2>
@@ -33,6 +49,7 @@
       <p id="parrafoSecundario">El contador va por: </p>
       <p id="parrafoFibonacci">Secuencia Fibonacci: </p>
     </section>
+
     <section id="seccionBotones">
       <h2>La sección de los botones</h2>
       <button id="botonCambiarTexto">Cambiar Texto del Párrafo</button>
@@ -40,12 +57,14 @@
       <button id="botonCambiarEstilo">Cambiar Estilo</button>
       <p id="resultadoFibonacci"></p>
     </section>
+
     <section id="seccionListas">
       <h2>La sección de las listas</h2>
       <ul id="miLista">
         <li>Elemento inicial 1</li>
         <li>Elemento inicial 2</li>
       </ul>
+
     </section>
     <section id="seccionImagenes">
       <h2>La sección de las imágenes</h2>
@@ -53,19 +72,119 @@
         <!-- Aquí se agregará una imagen -->
       </div>
     </section>
+
     <section id="seccionFormulario">
       <h2>La sección del Formulario</h2>
-      <form id="elFormulario" action="#">
-        <!-- <input type="text" id="campoInput" placeholder="Escribe algo..." /> -->
-        <input type="text" id="campoNombre" name="nombre" placeholder="Escribe tu nombre" />
-        <input type="text" id="campoEdad" name="edad" placeholder="Introduce tu edad" />
-        <!-- <input type="text" id="campoGenero" name="genero" placeholder="Introduce tu genero" />
-        <input type="text" id="campoProvincia" name="provincia" placeholder="Introduce tu provincia" />
-        <input type="text" id="campoEmail" name="email" placeholder="Introduce tu email" />
-        <input type="text" id="campoCv" name="cv" placeholder="Introduce cv" /> -->
-        <p id="mensajeInput"></p>
+      <form id="elFormulario" action="#" method="get" enctype="multipart/form-data">
+        <table>
+          <thead>
+            <tr>
+              <th colspan="6">
+                <h2>Formulario de Contacto</h2>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><label for="campoNombre">Nombre</label></td>
+              <td><input type="text" id="campoNombre" name="nombre" placeholder="Escribe tu nombre" /></td>
+              <td><label for="campoApellidos">Apellidos</label></td>
+              <td><input type="text" id="campoApellidos" name="apellidos" placeholder="Escribe tus apellidos" /></td>
+              <td><label for="campoEdad">F. Nacimiento</label></td>
+              <td><input type="date" id="campoEdad" name="edad" placeholder="Introduce tu edad" /></td>
+            </tr>
+            <tr>
+              <td colspan="2"><label for="campoEmail">Correo electrónico</label></td>
+              <td colspan="4"><input type="email" id="campoEmail" name="email" placeholder="Correo electrónico" /></td>
+            </tr>
+            <tr>
+              <td><label for="campoGenero">Género</label></td>
+              <td colspan="5">
+                <select id="campoGenero" name="genero">
+                  <option value="">Seleccione un género</option>
+                  <option value="hombre">Hombre</option>
+                  <option value="mujer">Mujer</option>
+                  <option value="otro">Otros</option>
+                  <option value="no responde">No contestar</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><label for="campoProvincia">Provincia</label></td>
+              <td colspan="4">
+                <select id="campoProvincia" name="provincia">
+                  <option value="">Seleccione una provincia</option>
+                  <option value="almeria">Almería</option>
+                  <option value="cadiz">Cádiz</option>
+                  <option value="cordoba">Córdoba</option>
+                  <option value="granada">Granada</option>
+                  <option value="huelva">Huelva</option>
+                  <option value="jaen">Jaén</option>
+                  <option value="malaga">Málaga</option>
+                  <option value="sevilla">Sevilla</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><label for="campoTecnologias">Tecnologías</label></td>
+              <td colspan="4">
+                <select id="campoTecnologias" name="tecnologia">
+                  <optgroup label="Servidor">
+                    <option value="php">PHP</option>
+                    <option value="nodejs">Node.js</option>
+                    <option value="python">Python</option>
+                    <option value="java">Java</option>
+                    <option value="csharp">C#</option>
+                  </optgroup>
+                  <optgroup label="Cliente">
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="angular">Angular</option>
+                    <option value="react">React</option>
+                    <option value="bootstrap">Bootstrap</option>
+                    <option value="jquery">jQuery</option>
+                  </optgroup>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><label for="campoExperiencia">Años de experiencia</label></td>
+              <td><input type="number" id="campoExperiencia" min="1" step="1" placeholder="Experiencia"/></td>
+              <td colspan="2"><label for="campoCV">Currículum Vitae (PDF)</label></td>
+              <td><input type="file" id="campoCV" accept="application/pdf" /></td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="6">Condiciones legal</td>
+            </tr>
+            <tr>
+              <td colspan="6">
+                <label><input type="checkbox" id="campoPolitica" />Acepto la Política de Privacidad</label>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="6">
+                <label><input type="checkbox" id="campoCondiciones" />Acepto las Condiciones de Uso</label>
+              </td>
+            </tr>
 
-        <button id="saveData" type="submit">Guardar</button>
+            <tr>
+              <td colspan="6">
+                <button id="saveData" type="submit">Guardar</button>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </form>
+
+
+    </section>
+
+    <p id="mensajeInput"></p>
+
+
     </section>
   </main>
 
@@ -79,8 +198,8 @@
   <!-- <script src="./src/assets/js/custom.v2.6.0.js"></script> -->
   <!-- <script src="./src/assets/js/custom.v2.7.0.js"></script> -->
   <!-- <script src="./src/assets/js/custom.v2.8.0.js"></script> -->
-  <script src="./src/assets/js/custom.v2.9.0.js"></script>
-  <!-- <script src="./src/assets/js/custom.v2.9.1.js"></script> -->
+  <!-- <script src="./src/assets/js/custom.v2.9.0.js"></script> -->
+  <script src="./src/assets/js/custom.v3.0.0.js"></script>
   <!-- Enlaza tu archivo JavaScript -->
 </body>
 
