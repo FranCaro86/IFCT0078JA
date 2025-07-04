@@ -4,7 +4,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+
+  <!-- Select2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+
   <title>Ejercicios DOM</title>
+
   <style>
     .destacado {
       background-color: yellow;
@@ -35,7 +45,7 @@
 
     }
   </style>
-</head>
+  <!-- </head>
 
 <body>
   <header>
@@ -69,123 +79,164 @@
     <section id="seccionImagenes">
       <h2>La sección de las imágenes</h2>
       <div id="contenedorImagen">
-        <!-- Aquí se agregará una imagen -->
+        
       </div>
-    </section>
+    </section> -->
 
-    <section id="seccionFormulario">
-      <h2>La sección del Formulario</h2>
-      <form id="elFormulario" action="#" method="get" enctype="multipart/form-data">
-        <table>
-          <thead>
-            <tr>
-              <th colspan="6">
-                <h2>Formulario de Contacto</h2>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><label for="campoNombre">Nombre</label></td>
-              <td><input type="text" id="campoNombre" name="nombre" placeholder="Escribe tu nombre" /></td>
-              <td><label for="campoApellidos">Apellidos</label></td>
-              <td><input type="text" id="campoApellidos" name="apellidos" placeholder="Escribe tus apellidos" /></td>
-              <td><label for="campoEdad">F. Nacimiento</label></td>
-              <td><input type="date" id="campoEdad" name="edad" placeholder="Introduce tu edad" /></td>
-            </tr>
-            <tr>
-              <td colspan="2"><label for="campoEmail">Correo electrónico</label></td>
-              <td colspan="4"><input type="email" id="campoEmail" name="email" placeholder="Correo electrónico" /></td>
-            </tr>
-            <tr>
-              <td><label for="campoGenero">Género</label></td>
-              <td colspan="5">
-                <select id="campoGenero" name="genero">
-                  <option value="">Seleccione un género</option>
-                  <option value="hombre">Hombre</option>
-                  <option value="mujer">Mujer</option>
-                  <option value="otro">Otros</option>
-                  <option value="no responde">No contestar</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="2"><label for="campoProvincia">Provincia</label></td>
-              <td colspan="4">
-                <select id="campoProvincia" name="provincia">
-                  <option value="">Seleccione una provincia</option>
-                  <option value="almeria">Almería</option>
-                  <option value="cadiz">Cádiz</option>
-                  <option value="cordoba">Córdoba</option>
-                  <option value="granada">Granada</option>
-                  <option value="huelva">Huelva</option>
-                  <option value="jaen">Jaén</option>
-                  <option value="malaga">Málaga</option>
-                  <option value="sevilla">Sevilla</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="2"><label for="campoTecnologias">Tecnologías</label></td>
-              <td colspan="4">
-                <select id="campoTecnologias" name="tecnologia">
-                  <optgroup label="Servidor">
-                    <option value="php">PHP</option>
-                    <option value="nodejs">Node.js</option>
-                    <option value="python">Python</option>
-                    <option value="java">Java</option>
-                    <option value="csharp">C#</option>
-                  </optgroup>
-                  <optgroup label="Cliente">
-                    <option value="html">HTML</option>
-                    <option value="css">CSS</option>
-                    <option value="javascript">JavaScript</option>
-                    <option value="angular">Angular</option>
-                    <option value="react">React</option>
-                    <option value="bootstrap">Bootstrap</option>
-                    <option value="jquery">jQuery</option>
-                  </optgroup>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="2"><label for="campoExperiencia">Años de experiencia</label></td>
-              <td><input type="number" id="campoExperiencia" min="1" step="1" placeholder="Experiencia"/></td>
-              <td colspan="2"><label for="campoCV">Currículum Vitae (PDF)</label></td>
-              <td><input type="file" id="campoCV" accept="application/pdf" /></td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td colspan="6">Condiciones legal</td>
-            </tr>
-            <tr>
-              <td colspan="6">
-                <label><input type="checkbox" id="campoPolitica" />Acepto la Política de Privacidad</label>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="6">
-                <label><input type="checkbox" id="campoCondiciones" />Acepto las Condiciones de Uso</label>
-              </td>
-            </tr>
+  <section id="seccionFormulario">
+    <div class="container-fluid">
 
-            <tr>
-              <td colspan="6">
-                <button id="saveData" type="submit">Guardar</button>
-              </td>
-            </tr>
-          </tfoot>
-        </table>
+      <form id="elFormulario" action="#" method="get" enctype="multipart/form-data" novalidate>
+
+        <h2 class="mb-4 text-center">La Sección del Formulario</h2>
+        <h3 class="mb-4 text-center">Formulario de Contacto</h3>
+
+        <!-- Primera fila -->
+        <div class="row mb-4">
+          <div class="col-12 col-md-3">
+            <label for="campoNombre" class="form-label fw-bold">Nombre <span class="text-danger">*</span>
+            </label>
+            <input type="text" class="form-control" id="campoNombre" name="nombre" placeholder="Escribe tu nombre"
+              required minlength="4">
+            <div class="invalid-feedback">El nombre debe tener al menos 4 caracteres.</div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label for="campoApellidos" class="form-label fw-bold">Apellidos <span class="text-danger">*</span>
+            </label>
+            <input type="text" class="form-control" id="campoApellidos" name="apellidos"
+              placeholder="Escribe tus apellidos" required minlength="4">
+            <div class="invalid-feedback">El apellido debe tener al menos 4 caracteres.</div>
+          </div>
+
+          <div class="col-12 col-md-3">
+            <label for="campoEdad" class="form-label fw-bold">Fecha Nacimiento <span
+                class="text-danger">*</span></label>
+            <input type="date" class="form-control" id="campoEdad" name="edad" required>
+            <div class="invalid-feedback" id="errorEdad">Debes ser mayor de 18 años.</div>
+          </div>
+        </div>
+
+        <!-- Segunda fila -->
+        <div class="row mb-4">
+          <div class="col-12 col-md-6">
+            <label for="campoEmail" class="form-label fw-bold">Correo Electrónico <span
+                class="text-danger">*</span></label>
+            <div class="input-group">
+              <input type="email" class="form-control" id="campoEmail" name="email"
+                placeholder="Escribe tu Correo electrónico" required>
+              <div class="invalid-feedback">Introduce un correo válido.</div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-3">
+            <label for="campoGenero" class="form-label fw-bold">Género <span class="text-danger">*</span>
+            </label>
+            <select class="form-select" id="campoGenero" name="genero" required>
+              <option value="">Seleccione un género</option>
+              <option value="hombre">Hombre</option>
+              <option value="mujer">Mujer</option>
+              <option value="otro">Otros</option>
+              <option value="no responde">No contestar</option>
+            </select>
+            <div class="invalid-feedback">Seleccione una opción.</div>
+          </div>
+
+          <div class="col-12 col-md-3">
+            <label for="campoProvincia" class="form-label fw-bold">Provincia <span class="text-danger">*</span>
+            </label>
+            <select class="form-select" id="campoProvincia" name="provincia" required>
+              <option value="">Seleccione una provincia</option>
+              <option value="almeria">Almería</option>
+              <option value="cadiz">Cádiz</option>
+              <option value="cordoba">Córdoba</option>
+              <option value="granada">Granada</option>
+              <option value="huelva">Huelva</option>
+              <option value="jaen">Jaén</option>
+              <option value="malaga">Málaga</option>
+              <option value="sevilla">Sevilla</option>
+            </select>
+            <div class="invalid-feedback">Seleccione una provincia.</div>
+          </div>
+        </div>
+
+        <!-- Tercera fila -->
+        <div class="row mb-4">
+          <div class="col-12 col-md-2">
+            <label for="campoTecnologias" class="form-label fw-bold">Tecnologías <span
+                class="text-danger">*</span></label>
+            <select class="form-select" id="campoTecnologias" name="tecnologia[]" multiple size="7" required
+              style="min-height: 140px;">
+              <optgroup label="Servidor">
+                <option value="php">PHP</option>
+                <option value="nodejs">Node.js</option>
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+                <option value="csharp">C#</option>
+              </optgroup>
+              <optgroup label="Cliente">
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="javascript">JavaScript</option>
+                <option value="angular">Angular</option>
+                <option value="react">React</option>
+                <option value="bootstrap">Bootstrap</option>
+                <option value="jquery">jQuery</option>
+              </optgroup>
+            </select>
+            <div class="invalid-feedback">Seleccione al menos una tecnología.</div>
+          </div>
+
+          <div class="col-12 col-md-3">
+            <label for="campoExperiencia" class="form-label fw-bold">Años de Experiencia <span
+                class="text-danger">*</span></label>
+            <input type="number" class="form-control" id="campoExperiencia" name="experiencia" min="1" step="1"
+              placeholder="Indica Años Exp." placeholder="Experiencia" required>
+            <div class="invalid-feedback">Indica tus años de experiencia.</div>
+          </div>
+
+          <div class="col-12 col-md-7">
+            <label for="campoCV" class="form-label fw-bold">Currículum Vitae (PDF) <span
+                class="text-danger">*</span></label>
+            <input type="file" class="form-control" id="campoCV" name="cv" accept="application/pdf" required>
+            <div class="invalid-feedback">Adjunta tu currículum en PDF.</div>
+          </div>
+        </div>
+
+        <!-- Checkboxes -->
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" id="campoPolitica" required>
+          <label class="form-check-label fw-bold" for="campoPolitica">Acepto la Política de Privacidad <span
+              class="text-danger">*</span></label>
+          <div class="invalid-feedback">Debes aceptar la política de privacidad.</div>
+        </div>
+
+        <div class="form-check mb-4">
+          <input class="form-check-input" type="checkbox" id="campoCondiciones" required>
+          <label class="form-check-label fw-bold" for="campoCondiciones">Acepto las Condiciones de Uso <span
+              class="text-danger">*</span></label>
+          <div class="invalid-feedback">Debes aceptar las condiciones de uso.</div>
+        </div>
+
+        <!-- Mensaje general -->
+        <div id="mensajeGeneral" class="alert alert-danger d-none" role="alert">
+          Por favor, completa todos los campos correctamente.
+        </div>
+
+        <!-- Botón -->
+        <div class="text-center">
+          <button id="saveData" type="submit" class="btn btn-lg btn-primary px-5">Guardar</button>
+        </div>
+
       </form>
+    </div>
+  </section>
 
 
-    </section>
-
-    <p id="mensajeInput"></p>
+  <p id="mensajeInput"></p>
 
 
-    </section>
+  </section>
   </main>
 
 
@@ -199,8 +250,23 @@
   <!-- <script src="./src/assets/js/custom.v2.7.0.js"></script> -->
   <!-- <script src="./src/assets/js/custom.v2.8.0.js"></script> -->
   <!-- <script src="./src/assets/js/custom.v2.9.0.js"></script> -->
+  <!-- <script src="./src/assets/js/custom.v2.9.1.js"></script> -->
   <script src="./src/assets/js/custom.v3.0.0.js"></script>
   <!-- Enlaza tu archivo JavaScript -->
-</body>
+  </body>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JQuery JS -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+  <!-- Select2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+  <!-- Fontawesomw JS -->
+  <script src="https://kit.fontawesome.com/c4fb6b9658.js" crossorigin="anonymous"></script>
 
 </html>
