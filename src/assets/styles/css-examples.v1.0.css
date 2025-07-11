@@ -1,0 +1,84 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header,
+footer {
+  background-color: #8d8989;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+nav a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+.contacto {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 2rem;
+  background-color: #fff;
+}
+
+.formulario,
+.info-contacto {
+  width: 45%;
+  min-width: 300px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 2rem;
+}
+
+input,
+textarea {
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.7rem;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #01080f;
+}
+
+#estadoMensaje {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.fila-parrafos {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .izquierda {
+  text-align: left;
+}
+
+.derecha {
+  text-align: right;
+} */
